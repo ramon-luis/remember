@@ -1,0 +1,34 @@
+
+<%= form_for @flashcard do |f| %>
+
+  <div class="form-group">
+    <label for="type">Card Type (select):</label>
+    <select class="form-control" id="type">
+      <option>Topic</option>
+      <option>Question</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="front">Front of Card:</label>
+    <textarea class="form-control" id="front" rows="3"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="idea">General Idea or Summary:</label>
+    <textarea class="form-control" id="idea" rows="5"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="notes">Notes:</label>
+    <textarea class="form-control" id="notes" rows="5"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="code">Code:</label>
+    <textarea class="form-control" id="code" rows="10"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+<% end %>

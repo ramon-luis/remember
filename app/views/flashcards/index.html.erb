@@ -1,0 +1,9 @@
+<% @flashcards.each do |flashcard| %>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <p class="card-text"><%= flashcard.cardfront %></p>
+      <%= link_to 'Edit', edit_flashcard_path(flashcard), class: 'btn btn-primary' %>
+      <%= link_to 'View', flashcard_path(flashcard), class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

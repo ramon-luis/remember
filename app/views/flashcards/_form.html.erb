@@ -1,0 +1,36 @@
+<%= form_with model: @flashcard, local: true do |f| %>
+
+  <% if @flashcard.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@flashcard.errors.count, "error") %> prohibited this flashcard from being saved:
+      </h2>
+      <ul>
+        <% @flashcard.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class='form-group'>
+    <%= f.label :cardtype, 'Type of card' %>
+    <%= f.select :cardtype, ['Topic','Question'], class: 'form-control' %>
+  </div>
+
+  <%= f.label :cardfront, 'Front of card' %>
+  <%= f.text_area :cardfront, rows: 3, class: 'form-control' %>
+
+  <%= f.label :cardidea, 'Main idea' %>
+  <%= f.text_area :cardidea, rows: 5, class: 'form-control' %>
+
+  <%= f.label :cardnotes, 'Notes' %>
+  <%= f.text_area :cardnotes, rows: 5, class: 'form-control' %>
+
+  <%= f.label :cardcode, 'Code' %>
+  <%= f.text_area :cardcode, rows: 8, class: 'form-control' %>
+
+
+  <%= f.submit 'Submit', class: "btn btn-primary" %>
+
+<% end %>
