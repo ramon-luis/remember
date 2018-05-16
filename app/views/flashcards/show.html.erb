@@ -1,4 +1,6 @@
-
+<p>
+  <h3 class="text-info">Flashcard Details</h3>
+</p>
 <p>
   <div class="card card-body">
     <div class="card-header text-secondary">
@@ -17,10 +19,10 @@
     </button>
   </div>
   <div class="btn-group-sm mr-3 ml-3" role="group" aria-label="Second group">
-    <%= link_to 'Edit', edit_flashcard_path(@flashcard), class: 'text-secondary small font-weight-light' %>
+    <%= link_to 'Edit', edit_flashcard_path(@flashcard), class: 'btn btn-sm btn-outline-secondary' %>
   </div>
   <div class="btn-group-sm ml-3" role="group" aria-label="Third group">
-    <%= link_to 'Delete', flashcard_path(@flashcard), method: :delete, data: {confirm: 'Are you sure?' }, class: 'text-danger small font-weight-light' %>
+    <%= button_to 'Delete', flashcard_path(@flashcard), method: :delete, data: {confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger' %>
   </div>
 </div>
 

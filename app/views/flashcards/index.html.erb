@@ -1,14 +1,10 @@
-
+<p>
+  <h3 class="text-info">Flashcards</h3>
+</p>
 
 <div class="table-responsive table-hover">
   <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Flashcards</th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
+
     <tbody>
       <% @flashcards.each do |flashcard| %>
         <tr>
@@ -16,10 +12,10 @@
             <%= link_to flashcard.cardfront[0..165]+' ...', flashcard_path(flashcard), class: 'text-dark' %>
           </td>
           <td>
-            <%= link_to 'Edit', edit_flashcard_path(flashcard), class: 'text-secondary small font-weight-light' %>
+            <%= link_to 'Edit', edit_flashcard_path(flashcard), class: 'btn btn-sm btn-outline-secondary' %>
           </td>
           <td>
-            <%= button_to 'Delete', flashcard_path(flashcard), method: :delete, data: {confirm: 'Are you sure?' }, class: 'text-danger small font-weight-light' %>
+            <%= button_to 'Delete', flashcard_path(flashcard), method: :delete, data: {confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger' %>
           </td>
         </tr>
       <% end %>
