@@ -13,7 +13,7 @@
       <% @flashcards.each do |flashcard| %>
         <tr>
           <td>
-            <%= link_to flashcard.cardfront[0..35]+' ...', flashcard_path(flashcard), class: 'text-dark' %>
+            <%= link_to flashcard.cardfront[0..165]+' ...', flashcard_path(flashcard), class: 'text-dark' %>
           </td>
           <td>
             <%= link_to 'Edit', edit_flashcard_path(flashcard), class: 'text-secondary small font-weight-light' %>
