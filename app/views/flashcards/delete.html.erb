@@ -1,0 +1,48 @@
+<p>
+  <h3 class="text-info">Delete Flashcard</h3>
+</p>
+<p>
+<p>
+  <h5>Are you sure you want to permenantly delete this flashard?</h5>
+</p>
+
+<p>
+  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group mr-2" role="group" aria-label="First group">
+      <%= button_to 'Delete', flashcard_path(@flashcard), method: :delete, data: {confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+    </div>
+    <div class="btn-group" role="group" aria-label="Second group">
+      <%= link_to 'Cancel', :back, class: 'btn btn-sm btn-outline-info' %>
+    </div>
+  </div>
+</p>
+<p>
+  <div class="card card-body">
+    <div class="card-header text-secondary">
+      Front of Card
+    </div>
+    <div class="card-body card-text">
+      <%= simple_format(@flashcard.cardfront) %>
+    </div>
+  </div>
+</p>
+<p>
+    <div class="card card-body">
+      <div class="card-header text-secondary">
+        Back of Card
+      </div>
+      <div class="card-body card-text">
+        <%= simple_format(@flashcard.cardback) %>
+      </div>
+    </div>
+  </p>
+  <p>
+    <div class="card card-body">
+      <div class="card-header text-secondary">
+        Code
+      </div>
+      <div class="card-body card-text card-code">
+        <%= simple_format(@flashcard.cardcode) %>
+      </div>
+    </div>
+  </p>

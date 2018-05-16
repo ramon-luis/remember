@@ -5,4 +5,7 @@ Rails.application.routes.draw do
 
   resources :flashcards
 
+  # confirmation page to delete flashcard
+  get '/flashcards/:id/delete' => 'flashcards#delete'
+
 end

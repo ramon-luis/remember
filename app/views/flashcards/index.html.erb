@@ -12,10 +12,12 @@
             <%= link_to flashcard.cardfront[0..165]+' ...', flashcard_path(flashcard), class: 'text-dark' %>
           </td>
           <td>
-            <%= link_to 'Edit', edit_flashcard_path(flashcard), class: 'btn btn-sm btn-outline-secondary' %>
+            <%= link_to 'Edit', edit_flashcard_path(flashcard), class: 'small font-weight-light
+            text-secondary' %>
           </td>
           <td>
-            <%= button_to 'Delete', flashcard_path(flashcard), method: :delete, data: {confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger' %>
+            <%= link_to 'Delete', "/flashcards/#{flashcard.id}/delete", class: 'small font-weight-light
+            text-danger' %>
           </td>
         </tr>
       <% end %>

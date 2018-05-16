@@ -39,6 +39,10 @@ class FlashcardsController < ApplicationController
     end
   end
 
+  def delete
+    @flashcard = Flashcard.find(params[:id])
+  end
+
   def destroy
     @flashcard = Flashcard.find(params[:id])
     @flashcard.destroy
