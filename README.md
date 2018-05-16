@@ -2,10 +2,9 @@
 
 A simple flashcard web application to help remember things.
 
-Create flashcards that include a front, back, and code section. The application
-was built for personal use only to help remember computer science topics, but
-could be adapted for many purposes.  Note that only authorized users can create,
-edit, and delete flashcards; anyone can browse.
+Create flashcards that include a front, back, and code section. Use markdown to write formatted text.
+
+The application was built for personal use only to help remember computer science topics, but could be adapted for many purposes.  Note that only authorized users can create, edit, and delete flashcards; anyone can browse.
 
 ## Getting Started / Installing
 
