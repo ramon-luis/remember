@@ -7,7 +7,7 @@
       Front of Card
     </div>
     <div class="card-body card-text">
-      <%= simple_format(@flashcard.cardfront) %>
+      <%= markdown(@flashcard.cardfront) %>
     </div>
   </div>
 </p>
@@ -33,7 +33,7 @@
         Back of Card
       </div>
       <div class="card-body card-text">
-        <%= simple_format(@flashcard.cardback) %>
+        <%= markdown(@flashcard.cardback) %>
       </div>
     </div>
   </p>
