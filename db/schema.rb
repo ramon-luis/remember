@@ -10,15 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180515192119) do
+ActiveRecord::Schema.define(version: 20180516172239) do
 
   create_table "flashcards", force: :cascade do |t|
     t.text "cardfront"
-    t.string "cardtype"
-    t.text "cardidea"
-    t.text "cardnotes"
+    t.text "cardback"
     t.text "cardcode"
-    t.text "cardtags"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,34 +1,44 @@
+<% if @display_mode == 'cardfront' %>
 
-<%= form_for @flashcard do |f| %>
-
-  <div class="form-group">
-    <label for="type">Card Type (select):</label>
-    <select class="form-control" id="type">
-      <option>Topic</option>
-      <option>Question</option>
-    </select>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <p class="card-text"><%= @flashcard.cardfront %></p>
+      <%= link_to 'Flip to Back', {controller: :flashcards, action: :show, display_mode: 'cardback'}, class: 'btn btn-primary' %>
+      <%= link_to 'Edit Card', edit_flashcard_path(@flashcard), class: 'btn btn-primary' %>
+    </div>
   </div>
 
-  <div class="form-group">
-    <label for="front">Front of Card:</label>
-    <textarea class="form-control" id="front" rows="3"></textarea>
-  </div>
+<% else %>
 
-  <div class="form-group">
-    <label for="idea">General Idea or Summary:</label>
-    <textarea class="form-control" id="idea" rows="5"></textarea>
-  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <p class="card-text"><%= @flashcard.cardidea %></p>
+      <p class="card-text"><pre><%= simple_format @flashcard.cardcode %></pre></p>
+      <%= link_to 'Flip to Front', {controller: :flashcards, action: :show, display_mode: 'cardfront'}, class: 'btn btn-primary' %>
+      <%= link_to 'Edit Card', edit_flashcard_path(@flashcard), class: 'btn btn-primary' %>
+      <%= link_to 'Delete Card', flashcard_path(@flashcard), method: :delete, data: {confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
 
-  <div class="form-group">
-    <label for="notes">Notes:</label>
-    <textarea class="form-control" id="notes" rows="5"></textarea>
+    </div>
   </div>
-
-  <div class="form-group">
-    <label for="code">Code:</label>
-    <textarea class="form-control" id="code" rows="10"></textarea>
-  </div>
-
-  <button type="submit" class="btn btn-primary">Submit</button>
 
 <% end %>
+
+____________________
+
+  <div class="row">
+    <%= @flashcard.cardfront %></p>
+  </div>
+  <div class="row">
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Show Back of Card
+    </button>
+
+      <%= link_to 'Flip to Back', {controller: :flashcards, action: :show, display_mode: 'cardback'}, class: 'btn btn-primary' %>
+      <%= link_to 'Edit Card', edit_flashcard_path(@flashcard), class: 'btn btn-primary' %>
+  </div>
+
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </div>
+</div>

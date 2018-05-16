@@ -3,14 +3,12 @@ class FlashcardsController < ApplicationController
   http_basic_authenticate_with  name: Rails.application.secrets.http_basic_user,
                                 password: Rails.application.secrets.http_basic_password,
                                 except: [:index, :show]
-  # http_basic_authenticate_with name: 'ramon', password: '1021', except: [:index, :show]
 
   def index
     @flashcards = Flashcard.all
   end
 
   def show
-    @display_mode = (params[:display_mode].nil? || params[:display_mode].empty?) ? 'cardfront' : params[:display_mode]
     @flashcard = Flashcard.find(params[:id])
   end
 
@@ -50,7 +48,7 @@ class FlashcardsController < ApplicationController
 
   private
     def flashcard_params
-      params.require(:flashcard).permit(:cardfront, :cardtype, :cardidea, :cardnotes, :cardcode, :cardtags)
+      params.require(:flashcard).permit(:cardfront, :cardback, :cardcode)
     end
 
 end

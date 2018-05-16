@@ -1,1 +1,16 @@
 @import 'bootstrap';
+
+
+.content{
+  font-family: 'Lato', sans-serif;
+}
+
+.card-code {
+  background-color: #eaebed;
+  color: black;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1em;
+  line-height: 0.8em;
+  white-space: pre;
+
+}

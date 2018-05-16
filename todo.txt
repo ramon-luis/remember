@@ -1,0 +1,25 @@
+TODO
+* make mobile friendly
+
+
+
+DONE
+* make code appear properly
+* add custom fonts
+
+* add header
+  * View All Cards - Home
+  * Get Random Card - Random Card
+  * Create New Card - New Card
+
+* Index view: Table
+    * Preview of Front - 'Terminal commands...'
+    * View
+
+* Show view
+    * Front of card
+    * Flip card
+    * Edit Card (small)
+      * Update
+      * Cancel
+      * Delete Card

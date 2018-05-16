@@ -1,24 +1,48 @@
-<% if @display_mode == 'cardfront' %>
 
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <p class="card-text"><%= @flashcard.cardfront %></p>
-      <%= link_to 'Flip to Back', {controller: :flashcards, action: :show, display_mode: 'cardback'}, class: 'btn btn-primary' %>
-      <%= link_to 'Edit Card', edit_flashcard_path(@flashcard), class: 'btn btn-primary' %>
+<p>
+  <div class="card card-body">
+    <div class="card-header text-secondary">
+      Front of Card
+    </div>
+    <div class="card-body card-text">
+      <%= simple_format(@flashcard.cardfront) %>
     </div>
   </div>
+</p>
 
-<% else %>
-
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <p class="card-text"><%= @flashcard.cardidea %></p>
-      <p class="card-text"><pre><%= simple_format @flashcard.cardcode %></pre></p>
-      <%= link_to 'Flip to Front', {controller: :flashcards, action: :show, display_mode: 'cardfront'}, class: 'btn btn-primary' %>
-      <%= link_to 'Edit Card', edit_flashcard_path(@flashcard), class: 'btn btn-primary' %>
-      <%= link_to 'Delete Card', flashcard_path(@flashcard), method: :delete, data: {confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
-
-    </div>
+<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group-sm mr-5" role="group" aria-label="First group">
+    <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseCardBack" aria-expanded="false" aria-controls="collapseCardBack">
+    Show/Hide Back of Card
+    </button>
   </div>
+  <div class="btn-group-sm mr-3 ml-3" role="group" aria-label="Second group">
+    <%= link_to 'Edit', edit_flashcard_path(@flashcard), class: 'text-secondary small font-weight-light' %>
+  </div>
+  <div class="btn-group-sm ml-3" role="group" aria-label="Third group">
+    <%= link_to 'Delete', flashcard_path(@flashcard), method: :delete, data: {confirm: 'Are you sure?' }, class: 'text-danger small font-weight-light' %>
+  </div>
+</div>
 
-<% end %>
+<div class="collapse" id="collapseCardBack">
+  <p>
+    <div class="card card-body">
+      <div class="card-header text-secondary">
+        Back of Card
+      </div>
+      <div class="card-body card-text">
+        <%= simple_format(@flashcard.cardback) %>
+      </div>
+    </div>
+  </p>
+  <p>
+    <div class="card card-body">
+      <div class="card-header text-secondary">
+        Code
+      </div>
+      <div class="card-body card-text card-code">
+        <%= simple_format(@flashcard.cardcode) %>
+      </div>
+    </div>
+  </p>
+</div>

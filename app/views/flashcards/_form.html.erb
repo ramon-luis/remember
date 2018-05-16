@@ -12,25 +12,30 @@
       </ul>
     </div>
   <% end %>
+  <p>
+    <%= f.label :cardfront, 'Front of card' %>
+    <%= f.text_area :cardfront, rows: 3, class: 'form-control' %>
+  </p>
 
-  <div class='form-group'>
-    <%= f.label :cardtype, 'Type of card' %>
-    <%= f.select :cardtype, ['Topic','Question'], class: 'form-control' %>
+  <p>
+    <%= f.label :cardback, 'Back of card' %>
+    <%= f.text_area :cardback, rows: 5, class: 'form-control' %>
+  </p>
+  <p>
+    <%= f.label :cardcode, 'Code' %>
+    <%= f.text_area :cardcode, rows: 8, class: 'form-control' %>
+  </p>
+
+  <p>
+  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group mr-2" role="group" aria-label="First group">
+      <%= f.submit 'Submit', class: "btn btn-info" %>
+    </div>
+    <div class="btn-group" role="group" aria-label="Second group">
+      <%= link_to 'Cancel', :back, class: 'btn btn-outline-danger' %>
+    </div>
   </div>
+  </p>
 
-  <%= f.label :cardfront, 'Front of card' %>
-  <%= f.text_area :cardfront, rows: 3, class: 'form-control' %>
-
-  <%= f.label :cardidea, 'Main idea' %>
-  <%= f.text_area :cardidea, rows: 5, class: 'form-control' %>
-
-  <%= f.label :cardnotes, 'Notes' %>
-  <%= f.text_area :cardnotes, rows: 5, class: 'form-control' %>
-
-  <%= f.label :cardcode, 'Code' %>
-  <%= f.text_area :cardcode, rows: 8, class: 'form-control' %>
-
-
-  <%= f.submit 'Submit', class: "btn btn-primary" %>
 
 <% end %>
