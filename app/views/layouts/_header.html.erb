@@ -6,11 +6,12 @@
     </button>
     <div class="navbar-collapse collapse w-50" id="collapsingNavbar">
       <ul class="navbar-nav w-55">
-        <li class="nav-item">
-          <a class="nav-link text-white" href="/flashcards">Browse Cards</a>
+        <li class="nav-item mr-5">
+          <!-- <a class="nav-link text-white" href="/flashcards">Browse Cards</a> -->
+          <%= link_to 'Browse All Cards', '/flashcards', :class => "btn btn-secondary"%>
         </li>
         <li class="nav-item mr-5">
-          <a class="nav-link text-white" href="/flashcards/new">Create New Card</a>
+          <%= link_to 'Create New Card', '/flashcards/new', :class => "btn btn-success"%>
         </li>
         <li class="nav-item">
             <%= link_to 'Get Random Card', flashcard_path(Flashcard.all.sample), :class => "btn btn-info"%>
