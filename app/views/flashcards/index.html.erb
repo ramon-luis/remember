@@ -19,7 +19,7 @@
             <%= link_to 'Edit', edit_flashcard_path(flashcard), class: 'text-secondary small font-weight-light' %>
           </td>
           <td>
-            <%= link_to 'Delete', flashcard_path(flashcard), method: :delete, data: {confirm: 'Are you sure?' }, class: 'text-danger small font-weight-light' %>
+            <%= button_to 'Delete', flashcard_path(flashcard), method: :delete, data: {confirm: 'Are you sure?' }, class: 'text-danger small font-weight-light' %>
           </td>
         </tr>
       <% end %>
